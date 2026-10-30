@@ -4,28 +4,28 @@ This project implements two independent Java applications: a child application t
 
 ## Why
 
-Java project developed to practice and demonstrate:
+> Java project developed to practice and demonstrate:
 
-- Launching a **child process** from a Java application with **ProcessBuilder**
-- Passing **command-line arguments** to a process
-- Reading a process's **standard output** and **error output**
-- Using **exit codes** to communicate success or failure between processes
-- **Error handling** across process boundaries
-- **Version control** using Git and GitHub
+>- Launching a **child process** from a Java application with **ProcessBuilder**
+>- Passing **command-line arguments** to a process
+>- Reading a process's **standard output** and **error output**
+>- Using **exit codes** to communicate success or failure between processes
+>- **Error handling** across process boundaries
+>- **Version control** using Git and GitHub
 
 ## How it works
 
-### **ConversorDivisas** *child*
+>### **ConversorDivisas** *child*
+>
+>Receives three arguments: amount, original currency and target currency.
+>
+>It converts the amount to the target currency using fixed rates (1 EUR = 1.00 EUR / 1.10 USD / 0.85 GBP). It prints only the result with two decimals to standard output.
+>
+ >- Exit code **1**: Wrong number of arguments, or the amount is not a number
+ >- Exit code **2**: One or both currencies are invalid or not supported
 
-Receives three arguments: amount, original currency and target currency.
-
-It converts the amount to the target currency using fixed rates (1 EUR = 1.00 EUR / 1.10 USD / 0.85 GBP). It prints only the result with two decimals to standard output.
-
- - Exit code **1**: Wrong number of arguments, or the amount is not a number
- - Exit code **2**: One or both currencies are invalid or not supported
-
-### **LanzadorConversor**-*parent* 
-
-Builds the command `java -cp <classpath> <package.ConversorDivisas> <arguments>`, launches the child, reads its output and error streams, and waits for it with `waitFor()`. 
-
-It then displays either the result (e.g. `100 EUR -> USD: 110.00`) or an error message with the exit code and the child's error text.
+>### **LanzadorConversor**-*parent* 
+>
+>Builds the command `java -cp <classpath> <package.ConversorDivisas> <arguments>`, launches the child, reads its output and error streams, and waits for it with `waitFor()`. 
+>
+>It then displays either the result (e.g. `100 EUR -> USD: 110.00`) or an error message with the exit code and the child's error text.
