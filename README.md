@@ -24,7 +24,7 @@ This project implements two independent Java applications: a child application t
  >- Exit code **1**: Wrong number of arguments, or the amount is not a number
  >- Exit code **2**: One or both currencies are invalid or not supported
 
->### **LanzadorConversor**-*parent* 
+>### **LanzadorConversor** *parent* 
 >
 >Builds the command `java -cp <classpath> <package.ConversorDivisas> <arguments>`, launches the child, reads its output and error streams, and waits for it with `waitFor()`. 
 >
